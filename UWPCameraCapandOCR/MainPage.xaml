@@ -7,7 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button x:Name="CapturePic" Click="CapturePic_Click">Capture Pic</Button>
+            <Button x:Name="RecognizeText" Click="RecognizeText_Click">Recognize Text</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <CaptureElement Name="PreviewControl" Stretch="Uniform" Width="640" Height="480"/>
+            <Image x:Name="CapturedImage" Width="200" Height="200"></Image>
+            <ListView x:Name="WordList" HorizontalAlignment="Center"></ListView>
+        </StackPanel>
 
     </Grid>
 </Page>
